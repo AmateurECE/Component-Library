@@ -4,11 +4,11 @@
   this library in a couple of programs which calculate circuit component values
   based on a set of desired conditions.</p>
 <h1>Component Rounding</h1>
-<p>Three functions are used to round component values to standard values:
+<p>Three functions are used to round component values to standard values:<br/>
   <code>
-    float iec_rener(float value, int series, int direction);
-    float iec_eser(float value, int series, int direction);
-    float iec_etol(float value, float tolerance, int direction);
+    float iec_rener(float value, int series, int direction);<br/>
+    float iec_eser(float value, int series, int direction);<br/>
+    float iec_etol(float value, float tolerance, int direction);<br/>
   </code>
   <list>
     <li/><code>iec_rener</code> - This function rounds `value' to the nearest
@@ -31,8 +31,8 @@
 <p>In addition, the library provides two functions which can be used to convert
   between "R" notation and floating point values:
   <code>
-    char * iec_rtostr(float value, float tolerance, int type);
-    float iec_rtof(char * rvalue, float * tolerance, int * type);
+    char * iec_rtostr(float value, float tolerance, int type);<br/>
+    float iec_rtof(char * rvalue, float * tolerance, int * type);<br/>
   </code>
   <list>
     <li/><code>iec_rtostr</code> - converts the base 10 (e0) float in `value'
