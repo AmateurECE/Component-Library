@@ -8,6 +8,7 @@ Three functions are used to round component values to standard values:<br/>
 <code>float iec_rener(float value, int series, int direction);</code><br/>
 <code>float iec_eser(float value, int series, int direction);</code><br/>
 <code>float iec_etol(float value, float tolerance, int direction);</code><br/>
+
 <list>
   <li/><code>iec_rener</code> - This function rounds `value' to the nearest
   value in the Rener series, or to the next value in `direction.' The Rener
@@ -19,26 +20,26 @@ Three functions are used to round component values to standard values:<br/>
   series with tolerance `tolerance,' or to the next value in `direction.' This
   fn may be used in lieu of iec_eser() if the series is not known. THE VALUE
   RETURNED IS NOT GUARANTEED TO BE WITHIN THE TOLERANCE SPECIFIED.
-</list>
+</list><br/>
+
 With the exception of the third function, the only function parameter supplied
 "by the user" is the first, <code>value</code>. The final two should be macros
 defined in iec60062.h. In the case of <code>iec_etol</code>, the second
 parameter is also supplied by the user, and is the tolerance which the user
 wishes to bound the search.</p>
+
 <h1>Pretty Printing</h1>
-<p>In addition, the library provides two functions which can be used to convert
-  between "R" notation and floating point values:
-  <code>
-    char * iec_rtostr(float value, float tolerance, int type);<br/>
-    float iec_rtof(char * rvalue, float * tolerance, int * type);<br/>
-  </code>
-  <list>
-    <li/><code>iec_rtostr</code> - converts the base 10 (e0) float in `value'
-    to "R" notation, according to the IEC 60062:2016 standard. The returned
-    string must be free'd after use.
-    <li/><code>iec_rtof</code> - converts the "R" notation string in `rvalue'
-    to a component value and tolerance. The value is returned, and the
-    tolerance is placed into *tolerance at the end of the call. A negative
-    value is returned if there is an error.
-  </list>
-</p>
+In addition, the library provides two functions which can be used to convert
+between "R" notation and floating point values:<br/>
+<code>char * iec_rtostr(float value, float tolerance, int type);</code><br/>
+<code>float iec_rtof(char * rvalue, float * tolerance, int * type);</code><br/>
+
+<list>
+  <li/><code>iec_rtostr</code> - converts the base 10 (e0) float in `value'
+  to "R" notation, according to the IEC 60062:2016 standard. The returned
+  string must be free'd after use.
+  <li/><code>iec_rtof</code> - converts the "R" notation string in `rvalue'
+  to a component value and tolerance. The value is returned, and the
+  tolerance is placed into *tolerance at the end of the call. A negative
+  value is returned if there is an error.
+</list>
