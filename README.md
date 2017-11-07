@@ -4,11 +4,11 @@
   this library in a couple of programs which calculate circuit component values
   based on a set of desired conditions.</p>
 <h1>Component Rounding</h1>
-<p>Three functions are used to round component values to standard values:<br/>
+<p>Three functions are used to round component values to standard values:<br />
   <code>
-    float iec_rener(float value, int series, int direction);<br/>
-    float iec_eser(float value, int series, int direction);<br/>
-    float iec_etol(float value, float tolerance, int direction);<br/>
+    float iec_rener(float value, int series, int direction);<br />
+    float iec_eser(float value, int series, int direction);<br />
+    float iec_etol(float value, float tolerance, int direction);<br />
   </code>
   <list>
     <li/><code>iec_rener</code> - This function rounds `value' to the nearest
