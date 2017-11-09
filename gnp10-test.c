@@ -26,7 +26,6 @@
  * STATIC FUNCTION PROTOTYPES
  ***/
 
-static int gnp10(float value);
 static float * gaussian(int size, float sigma);
 
 /*******************************************************************************
