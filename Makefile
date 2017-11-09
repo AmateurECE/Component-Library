@@ -29,13 +29,22 @@ force:
 clean:
 	rm -f $(TOP)/*.o
 
-test: force gnp10-test
+test: force gnp10-test stdvalue-test
 
 gnp10-test: force
 	$(CC) $(CFLAGS) `pkg-config --cflags gsl` \
 	`if [ -d /home/etwardy ]; then \
 		echo -I/home/etwardy/Documents/gsl-release-2-4/; fi` \
 	-o gnp10-test gnp10-test.c \
+	`pkg-config --libs gsl` \
+	`if [ -d /home/etwardy/ ]; then \
+		echo -L /home/etwardy/Documents/gsl-release-2-4/.libs/; fi`
+
+stdvalue-test: force
+	$(CC) $(CFLAGS) `pkg-config --cflags gsl` \
+	`if [ -d /home/etwardy ]; then \
+		echo -I/home/etwardy/Documents/gsl-release-2-4/; fi` \
+	-o stdvalue-test stdvalue-test.c \
 	`pkg-config --libs gsl` \
 	`if [ -d /home/etwardy/ ]; then \
 		echo -L /home/etwardy/Documents/gsl-release-2-4/.libs/; fi`
