@@ -7,7 +7,7 @@
  *
  * CREATED:	    11/08/2017
  *
- * LAST EDITED:	    11/08/2017
+ * LAST EDITED:	    11/09/2017
  ***/
 
 /*******************************************************************************
@@ -57,7 +57,7 @@ int main() {
     StopIf(arr == NULL, 1, "Error: gaussian() returned NULL.\n");
     for (int j = 0; j < arrsize; j++) {
       t = fabsf(arr[j]) + (float)tests[i][0];
-      diff = gnp10(t);
+      diff = (int)gnp10(t);
       final = t / powf(10.0F, (float)diff);
       printf("%d\t\t%8g\t%6d\t%8g\n", (10*i)+j+1, t, diff, final);
     }

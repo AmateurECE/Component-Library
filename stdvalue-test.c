@@ -51,14 +51,12 @@ int main() {
   
   printf("Trial no.\tInput\t\tOutput\n");
   float t, final, *arr;
-  int diff;
   for (int i = 0; i < numtests; i++) {
     arr = gaussian(arrsize, tests[i][1]);
     StopIf(arr == NULL, 1, "Error: gaussian() returned NULL.\n");
     for (int j = 0; j < arrsize; j++) {
       t = fabsf(arr[j]) + (float)tests[i][0];
-      diff = gnp10(t);
-      final = stdvalue(arr[j], (float *)&e48,
+      final = stdvalue(t, (float *)&e48,
 		       sizeof(e48) / sizeof(float), IEC_ROUND_UP);
       printf("%d\t\t%8g\t%8g\n", (10*i)+j+1, t, final);
     }

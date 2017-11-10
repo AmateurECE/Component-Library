@@ -1,4 +1,4 @@
-/*A******************************************************************************
+/*******************************************************************************
  * NAME:	    iec60062.c
  *
  * AUTHOR:	    Ethan D. Twardy
@@ -81,7 +81,7 @@ static const float e192[] = {
  * STATIC FUNCTION PROTOTYPES
  ***/
 
-static int gnp10(float value);
+static float gnp10(float value);
 static float stdvalue(float value, float * array, size_t size, int direction);
 
 /*******************************************************************************
@@ -257,23 +257,24 @@ float iec_etol(float value, float tolerance, int direction)
  *
  * ARGUMENTS:	    value: (float) -- the value to round.
  *
- * RETURN:	    int -- the value, or -1 if an error occurs.
+ * RETURN:	    float -- the value, or NaN if an error occurs.
  *
  * NOTES:	    none.
  ***/
-static int gnp10(float value)
+static float gnp10(float value)
 {
   if (!isnormal(value) || value <= 0.0F)
-    return -1.0F;
+    return NAN;
 
-  return (int)floorf(log10f(value));
+  return floorf(log10f(value));
 }
 
 static float stdvalue(float value, float * array, size_t size, int direction)
 {
-  value = gnp10(value);
-  if (value == -1.0F)
+  float t = gnp10(value);
+  if (isnan(t))
     return -1.0F;
+  value /= pow(10, (int)t);
 
   size_t index = size / 3;
   if (value < array[index * 2]) {
@@ -284,13 +285,13 @@ static float stdvalue(float value, float * array, size_t size, int direction)
   }
 
   float t1 = 0.0F, t2 = 0.0F;
-  while (index < size) {
+  while (index < size) { /* TODO: Incorrect Implementation of the algorithm. */
     if (array[index] == value)
       return value;
     t2 = t1;
     t1 = array[index] / value;
     if (t1 < t2)
-      return array[--index];
+      return array[--index] * pow(10, (int)t);
     index++;
   }
 
