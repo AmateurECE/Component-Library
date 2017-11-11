@@ -1,4 +1,5 @@
 ./iec60062.c: Incorrect Implementation of the algorithm. */ | id:132e6c35b530bd4b46c1bd71bf9db7ee8568238e
 ./iec60062.c: Implement rtof */ | id:40ba9e0e893ceb83660ab0b33fc7471af4a44752
 ./iec60062.c: Implement iec_rener */ | id:5a69d0843459e73763680abab851000abdb429d4
+./iec60062.c: Print the static structures to C code */ | id:c727872163398adeb85bd0fbe5d53e916cb03af4
 ./Makefile: Fix these make flags | id:fa100d2d16f12ad0905e3afd7ee4b1b5a2e9995f

@@ -9,7 +9,7 @@
  *
  * CREATED:	    11/07/2017
  *
- * LAST EDITED:	    11/09/2017
+ * LAST EDITED:	    11/11/2017
  ***/
 
 /*******************************************************************************
@@ -285,6 +285,7 @@ static float stdvalue(float value, float * array, size_t size, int direction)
   }
 
   float t1 = 0.0F, t2 = 0.0F;
+  /* TODO: Print the static structures to C code */
   while (index < size) { /* TODO: Incorrect Implementation of the algorithm. */
     if (array[index] == value)
       return value;
