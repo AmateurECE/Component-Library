@@ -34,6 +34,7 @@ wishes to bound the search.
 ## Pretty Printing ##
 In addition, the library provides two functions which can be used to convert
 between "R" notation and floating point values:
+
 `char * iec_rtostr(float value, float tolerance, int type);`
 
 `float iec_rtof(char * rvalue, float * tolerance, int * type);`
