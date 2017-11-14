@@ -9,7 +9,7 @@
  *
  * CREATED:	    11/07/2017
  *
- * LAST EDITED:	    11/11/2017
+ * LAST EDITED:	    11/14/2017
  ***/
 
 /*******************************************************************************
@@ -137,13 +137,13 @@ float iec_rtof(char * rvalue, float * tolerance, int * type)
 }
 
 /*******************************************************************************
- * FUNCTION:	    iec_rener
+ * FUNCTION:	    iec_renard
  *
  * DESCRIPTION:	    This function rounds `value' to the nearest value in the
- *		    Rener series, or to the next value in `direction.'
+ *		    Renard series, or to the next value in `direction.'
  *
  * ARGUMENTS:	    value: (float) -- the value to round.
- *		    series: (int) -- the Rener series to use. One of macros
+ *		    series: (int) -- the Renard series to use. One of macros
  *			defined in iec60062.h.
  *		    direction: (int) -- the direction to round in. One of macros
  *			defined in iec60062.h.
@@ -152,9 +152,9 @@ float iec_rtof(char * rvalue, float * tolerance, int * type)
  *
  * NOTES:	    none.
  ***/
-float iec_rener(float value, int series, int direction)
+float iec_renard(float value, int series, int direction)
 {
-  return -1.0F; /* TODO: Implement iec_rener */
+  return -1.0F; /* TODO: Implement iec_renard */
 }
 
 /*******************************************************************************

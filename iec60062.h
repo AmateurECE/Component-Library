@@ -10,7 +10,7 @@
  *
  * CREATED:	    11/07/2017
  *
- * LAST EDITED:	    11/07/2017
+ * LAST EDITED:	    11/14/2017
  ***/
 
 /*******************************************************************************
@@ -33,7 +33,7 @@
 #define IEC_E96		0x080
 #define IEC_E192	0x100
 
-/* The Rener series rounding function enforces the "least rounded" series.
+/* The Renard series rounding function enforces the "least rounded" series.
  * This was a design choice at the expense of the series.
  */
 #define IEC_R5		0x0200
@@ -64,9 +64,9 @@ extern char * iec_rtostr(float value, float tolerance, int type);
 extern float iec_rtof(char * rvalue, float * tolerance, int * type);
 
 /**
- * Round `value' using the Rener series.
+ * Round `value' using the Renard series.
  */
-extern float iec_rener(float value, int series, int direction);
+extern float iec_renard(float value, int series, int direction);
 
 /**
  * Round value using E series `series'
