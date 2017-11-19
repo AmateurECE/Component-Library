@@ -9,7 +9,7 @@
  *
  * CREATED:	    11/07/2017
  *
- * LAST EDITED:	    11/14/2017
+ * LAST EDITED:	    11/19/2017
  ***/
 
 /*******************************************************************************
@@ -24,6 +24,9 @@
 /*******************************************************************************
  * STATIC VARIABLES
  ***/
+
+/* TODO: Add Rener series values */
+/* TODO: int modified_bs(bst * tree, void * data, bst * left, bst * right); */
 
 /* E series values */
 static const float e3[] = { 1.0, 2.2, 4.7 };

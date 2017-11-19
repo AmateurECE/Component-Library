@@ -1,5 +1,7 @@
 ./iec60062.c: Incorrect Implementation of the algorithm. */ | id:132e6c35b530bd4b46c1bd71bf9db7ee8568238e
 ./iec60062.c: Implement rtof */ | id:40ba9e0e893ceb83660ab0b33fc7471af4a44752
+./iec60062.c: int modified_bs(bst * tree, void * data, bst * left, bst * right); */ | id:a80123f3261297c2ebe5035f85dd445e4980bee4
+./iec60062.c: Add Rener series values */ | id:c3d94bc16133817de1c29034f8c7e792bd0d6e8f
 ./iec60062.c: Implement iec_renard */ | id:c6b1e73ad8c049890612707b60e46d4ec57cf8c2
 ./iec60062.c: Print the static structures to C code */ | id:c727872163398adeb85bd0fbe5d53e916cb03af4
 ./Makefile: Fix these make flags | id:fa100d2d16f12ad0905e3afd7ee4b1b5a2e9995f
